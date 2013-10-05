@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en" ng-app="app">
+<html lang="en" ng-app="app" style="height:100%;">
 	<head><!-- Latest compiled and minified CSS -->
 		<link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
 		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
@@ -10,8 +10,11 @@
 		<script src="https://raw.github.com/nlaplante/angular-google-maps/master/src/angular-google-maps.js"></script>
 		<script src="{{ STATIC_URL }}js/app.js"></script>
 	</head>
-	<body ng-controller="Ctrl">
+	<body ng-controller="Ctrl" style="height:100%;">
 	{% verbatim %}
+		<google-map 
+			center="center" draggable="true" zoom="zoom" markers="markers"
+			mark-click="true" style="height:100%;position:absolute;z-index:-50;display:block;"></google-map>
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-5">
@@ -50,10 +53,6 @@
 					</ul>
 				</div>
 				<div class="col-lg-8">
-					<google-map 
-						center="center" draggable="true" zoom="zoom" markers="markers"
-						mark-click="true" style="height:400px; display:block;"></google-map>
-					
 				</div>
 			</div>
 		</div>
