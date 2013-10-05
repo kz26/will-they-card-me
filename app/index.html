@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en" ng-app="app">
+	<head><!-- Latest compiled and minified CSS -->
+		<link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
+		<script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+		
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js"></script>
+		<script src="http://maps.googleapis.com/maps/api/js?sensor=false&amp;language=en"></script>
+		<script src="https://raw.github.com/nlaplante/angular-google-maps/master/src/angular-google-maps.js"></script>
+	</head>
+	<body ng-controller="Controller">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-5">
+					<h1>WillTheyCard.me?</h1>
+					<h2>Because getting carded sucks</h2>
+				</div>
+				<form>
+					<div class="col-lg-6 ve">
+					<input type="text" class="input-small form-control"/>
+					</div>
+					<div class="col-lg-1">
+					<button type="submit" class="btn">Search</button>
+					</div>
+				</form>
+			</div>
+			<div class="row">
+				<div class="col-lg-4">
+					<ul>
+						<li ng-repeat="place in places">
+							<h3>{{place.name}}</h3>
+							<span class="votes"><span class="up">{{place.up}}</span>/
+							</span><span class="down">{{place.down}}</span></span>
+							<ul>
+								<li ng-repeat="review in place.reviews">
+									<div class="row">
+										<div class="col-lg-2">
+											{{review.vote}}
+										</div>
+										<div class="col-lg-10">
+											{{review.comment}}
+										</div>
+									</div>
+								</li>
+							</ul>
+						</li>
+					</ul>
+				</div>
+				<div class="col-lg-8">
+					<google-map 
+						center="center" draggable="true" zoom="zoom" markers="markers"
+						mark-click="true"></google-map>
+					
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
