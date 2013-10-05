@@ -1,4 +1,4 @@
-var app = angular.module('app', []);
+var app = angular.module('app', ['google-maps']);
 function Ctrl($scope, $http) {
 	angular.extend($scope, {
 		center: {
