@@ -1,4 +1,5 @@
 from django.contrib.gis.db import models
+from django.conf import settings
 import us as usa
 from django.contrib.auth import get_user_model
 
@@ -15,6 +16,6 @@ class Place(models.Model):
 
 class Report(models.Model):
 	place = models.ForeignKey(Place, related_name='reports')
-	user = models.ForeignKey
+	user = models.ForeignKey(settings.AUTH_USER_MODEL)
 	vote = models.IntegerField()
 	comment = models.TextField()
