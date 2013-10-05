@@ -7,6 +7,7 @@
 		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js"></script>
 		<script src="http://maps.googleapis.com/maps/api/js?sensor=false&amp;language=en"></script>
 		<script src="https://raw.github.com/nlaplante/angular-google-maps/master/src/angular-google-maps.js"></script>
+		<script src="angular.js"></script>
 	</head>
 	<body ng-controller="Controller">
 		<div class="container">
@@ -17,10 +18,10 @@
 				</div>
 				<form>
 					<div class="col-lg-6 ve">
-					<input type="text" class="input-small form-control"/>
+					<input type="text" class="input-small form-control" ng-model="query"/>
 					</div>
 					<div class="col-lg-1">
-					<button type="submit" class="btn">Search</button>
+					<button type="submit" class="btn" ng-click="search()">Search</button>
 					</div>
 				</form>
 			</div>
