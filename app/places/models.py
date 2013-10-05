@@ -14,6 +14,9 @@ class Place(models.Model):
 	zip_code = models.CharField(max_length=5)
 	points = models.IntegerField(default=0)
 
+	def __unicode__(self):
+		return "%s (%s, %s %s)" % (self.name, self.city, self.state, self.zip_code)
+
 class Report(models.Model):
 	place = models.ForeignKey(Place, related_name='reports')
 	user = models.ForeignKey(settings.AUTH_USER_MODEL)

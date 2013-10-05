@@ -1,15 +1,17 @@
-{% verbatim %}<!doctype html>
+<!doctype html>
 <html lang="en" ng-app="app">
 	<head><!-- Latest compiled and minified CSS -->
 		<link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 		<script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
 		
 		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js"></script>
 		<script src="http://maps.googleapis.com/maps/api/js?sensor=false&amp;language=en"></script>
 		<script src="https://raw.github.com/nlaplante/angular-google-maps/master/src/angular-google-maps.js"></script>
-		<script src="angular.js"></script>
+		<script src="{{ STATIC_URL }}js/app.js"></script>
 	</head>
 	<body ng-controller="Controller">
+	{% verbatim %}
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-5">
